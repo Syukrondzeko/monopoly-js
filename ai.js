@@ -5,8 +5,6 @@ function AITest(p) {
 	// This variable is static, it is not related to each instance.
 	this.constructor.count++;
 
-	p.name = "AI " + this.constructor.count;
-
 	// Calculate strategic value of a property
 	var getPropertyValue = function(index) {
 		var s = square[index];

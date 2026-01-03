@@ -2808,13 +2808,16 @@ function setup() {
 			p.bidding = !!game.biddingEnabled;
 		}
 
+		// Always set the name first (human OR AI)
+		p.name = document.getElementById("player" + i + "name").value;
+
 		if (document.getElementById("player" + i + "ai").value === "0") {
-			p.name = document.getElementById("player" + i + "name").value;
 			p.human = true;
 		} else if (document.getElementById("player" + i + "ai").value === "1") {
 			p.human = false;
 			p.AI = new AITest(p);
 		}
+
 
 		// Update displayed player name and show chosen avatar filename for debugging
 		var moneyNameEl = document.getElementById("p" + i + "moneyname");

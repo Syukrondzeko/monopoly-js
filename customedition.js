@@ -155,17 +155,17 @@ square[1] = new Square("Surabaya", "$60", "#8B4513", 60, 3, 2, 10, 30, 90, 160, 
 square[2] = new Square("Kotak Misterius", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[3] = new Square("Semarang", "$60", "#8B4513", 60, 3, 4, 20, 60, 180, 320, 450);
 square[4] = new Square("Pajak Tapera", "Pay $200", "#FFFFFF");
-square[5] = new Square("Pekalongan", "$200", "#FFFFFF", 200, 1);
+square[5] = new Square("Stasiun Pekalongan", "$200", "#FFFFFF", 200, 1);
 square[6] = new Square("Jogjakarta", "$100", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
 square[7] = new Square("Kartu Kesempatan", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[8] = new Square("Bandung", "$100", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
 square[9] = new Square("Jakarta", "$120", "#87CEEB", 120, 4, 8, 40, 100, 300, 450, 600);
 square[10] = new Square("Hanya Lewat Penjara", "", "#FFFFFF");
 square[11] = new Square("Lombok", "$140", "#FF0080", 140, 5, 10, 50, 150, 450, 625, 750);
-square[12] = new Square("Bali", "$150", "#FFFFFF", 150, 2);
+square[12] = new Square("PLN Bali", "$150", "#FFFFFF", 150, 2);
 square[13] = new Square("Raja Ampat", "$140", "#FF0080", 140, 5, 10, 50, 150, 450, 625, 750);
 square[14] = new Square("Labuan Bajo", "$160", "#FF0080", 160, 5, 12, 60, 180, 500, 700, 900);
-square[15] = new Square("Banda Neira", "$200", "#FFFFFF", 200, 1);
+square[15] = new Square("Pelabuhan Banda Neira", "$200", "#FFFFFF", 200, 1);
 square[16] = new Square("Pulau Maitara", "$180", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
 square[17] = new Square("Kotak Misterius", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[18] = new Square("Tana Toraja", "$180", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
@@ -175,17 +175,17 @@ square[21] = new Square("Singapura", "$220", "#FF0000", 220, 7, 18, 90, 250, 700
 square[22] = new Square("Kartu Kesempatan", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[23] = new Square("Hongkong", "$220", "#FF0000", 220, 7, 18, 90, 250, 700, 875, 1050);
 square[24] = new Square("Bangkok", "$240", "#FF0000", 240, 7, 20, 100, 300, 750, 925, 1100);
-square[25] = new Square("Sa Pa", "$200", "#FFFFFF", 200, 1);
+square[25] = new Square("Stasiun Sa Pa", "$200", "#FFFFFF", 200, 1);
 square[26] = new Square("Seoul", "$260", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
 square[27] = new Square("Osaka", "$260", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
-square[28] = new Square("Tokyo", "$150", "#FFFFFF", 150, 2);
+square[28] = new Square("PDAM Tokyo", "$150", "#FFFFFF", 150, 2);
 square[29] = new Square("Mekkah", "$280", "#FFFF00", 280, 8, 24, 120, 360, 850, 1025, 1200);
 square[30] = new Square("Pergi ke Penjara", "Go directly to Jail. Do not pass GO. Do not collect $200.", "#FFFFFF");
 square[31] = new Square("Amsterdam", "$300", "#008000", 300, 9, 26, 130, 390, 900, 1100, 1275);
 square[32] = new Square("Los Angeles", "$300", "#008000", 300, 9, 26, 130, 390, 900, 1100, 1275);
 square[33] = new Square("Kartu Kesempatan", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[34] = new Square("New York", "$320", "#008000", 320, 9, 28, 150, 450, 1000, 1200, 1400);
-square[35] = new Square("Swiss", "$200", "#FFFFFF", 200, 1);
+square[35] = new Square("Bandara Swiss", "$200", "#FFFFFF", 200, 1);
 square[36] = new Square("Kotak Misterius", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[37] = new Square("Edinburgh", "$350", "#0000FF", 350, 10, 35, 175, 500, 1100, 1300, 1500);
 square[38] = new Square("Pajak buat DPR", "Pay $100", "#FFFFFF");
@@ -194,37 +194,100 @@ square[39] = new Square("London", "$400", "#0000FF", 400, 10, 50, 200, 600, 1400
 var communityChestCards = [];
 var chanceCards = [];
 
-communityChestCards[0] = new Card("Get out of Jail, Free. This card may be kept until needed or sold.", function(p) { p.communityChestJailCard = true; updateOwned();});
-communityChestCards[1] = new Card("You have won second prize in a beauty contest. Collect $10.", function() { addamount(10, 'Community Chest');});
-communityChestCards[2] = new Card("From sale of stock, you get $50.", function() { addamount(50, 'Community Chest');});
-communityChestCards[3] = new Card("Life insurance matures. Collect $100.", function() { addamount(100, 'Community Chest');});
-communityChestCards[4] = new Card("Income tax refund. Collect $20.", function() { addamount(20, 'Community Chest');});
-communityChestCards[5] = new Card("Holiday fund matures. Receive $100.", function() { addamount(100, 'Community Chest');});
-communityChestCards[6] = new Card("You inherit $100.", function() { addamount(100, 'Community Chest');});
-communityChestCards[7] = new Card("Receive $25 consultancy fee.", function() { addamount(25, 'Community Chest');});
-communityChestCards[8] = new Card("Pay hospital fees of $100.", function() { subtractamount(100, 'Community Chest');});
-communityChestCards[9] = new Card("Bank error in your favor. Collect $200.", function() { addamount(200, 'Community Chest');});
-communityChestCards[10] = new Card("Pay school fees of $50.", function() { subtractamount(50, 'Community Chest');});
-communityChestCards[11] = new Card("Doctor's fee. Pay $50.", function() { subtractamount(50, 'Community Chest');});
-communityChestCards[12] = new Card("It is your birthday. Collect $10 from every player.", function() { collectfromeachplayer(10, 'Community Chest');});
-communityChestCards[13] = new Card("Advance to \"GO\" (Collect $200).", function() { advance(0);});
-communityChestCards[14] = new Card("You are assessed for street repairs. $40 per house. $115 per hotel.", function() { streetrepairs(40, 115);});
-communityChestCards[15] = new Card("Go to Jail. Go directly to Jail. Do not pass \"GO\". Do not collect $200.", function() { gotojail();});
+communityChestCards[0] = new Card("Kartu grasi tahanan penjara.", function(p) { p.communityChestJailCard = true; updateOwned();});
+communityChestCards[1] = new Card("Menang undian ciki bocil senilai $10.", function() { addamount(10, 'Community Chest');});
+communityChestCards[2] = new Card("Dapat duit dari crypto koin micin $50.", function() { addamount(50, 'Community Chest');});
+communityChestCards[3] = new Card("Dapat bansos menjelang pemilu $100.", function() { addamount(100, 'Community Chest');});
+communityChestCards[4] = new Card("Nemu duit dari dompet teman $20.", function() { addamount(20, 'Community Chest');});
+communityChestCards[5] = new Card("Dapat duit streaming YouTube $100.", function() { addamount(100, 'Community Chest');});
+communityChestCards[6] = new Card("Dapat duit challenge TikTok $100.", function() { addamount(100, 'Community Chest');});
+communityChestCards[7] = new Card("Dapat $25 dari cashback jajan.", function() { addamount(25, 'Community Chest');});
+communityChestCards[8] = new Card("Bayar rumah sakit sepupu $100.", function() { subtractamount(100, 'Community Chest');});
+communityChestCards[9] = new Card("Dapat duit sebagai influencer $200.", function() { addamount(200, 'Community Chest');});
+communityChestCards[10] = new Card("Bayar uang sekolah $50.", function() { subtractamount(50, 'Community Chest');});
+communityChestCards[11] = new Card("Donasi ke orang-orang $50.", function() { subtractamount(50, 'Community Chest');});
+communityChestCards[12] = new Card("Ulang tahunmu. Dapat $10 dari setiap pemain.", function() { collectfromeachplayer(10, 'Community Chest');});
+communityChestCards[13] = new Card("Jalur orang dalam langsung ke \"GO\" (Dapat $200).", function() { advance(0);});
+communityChestCards[14] = new Card("Bayar perbaikan bangunan $40 per rumah dan $115 per hotel.", function() { streetrepairs(40, 115);});
+communityChestCards[15] = new Card("Masuk penjara kamu.", function() { gotojail();});
 
 
-chanceCards[0] = new Card("GET OUT OF JAIL FREE. This card may be kept until needed or traded.", function(p) { p.chanceJailCard=true; updateOwned();});
-chanceCards[1] = new Card("Make General Repairs on All Your Property. For each house pay $25. For each hotel $100.", function() { streetrepairs(25, 100);});
-chanceCards[2] = new Card("Speeding fine $15.", function() { subtractamount(15, 'Chance');});
-chanceCards[3] = new Card("You have been elected chairman of the board. Pay each player $50.", function() { payeachplayer(50, 'Chance');});
-chanceCards[4] = new Card("Go back three spaces.", function() { gobackthreespaces();});
-chanceCards[5] = new Card("ADVANCE TO THE NEAREST UTILITY. IF UNOWNED, you may buy it from the Bank. IF OWNED, throw dice and pay owner a total ten times the amount thrown.", function() { advanceToNearestUtility();});
-chanceCards[6] = new Card("Bank pays you dividend of $50.", function() { addamount(50, 'Chance');});
-chanceCards[7] = new Card("ADVANCE TO THE NEAREST RAILROAD. If UNOWNED, you may buy it from the Bank. If OWNED, pay owner twice the rental to which they are otherwise entitled.", function() { advanceToNearestRailroad();});
-chanceCards[8] = new Card("Pay poor tax of $15.", function() { subtractamount(15, 'Chance');});
-chanceCards[9] = new Card("Take a trip to Reading Rail Road. If you pass \"GO\" collect $200.", function() { advance(5);});
-chanceCards[10] = new Card("ADVANCE to Boardwalk.", function() { advance(39);});
-chanceCards[11] = new Card("ADVANCE to Illinois Avenue. If you pass \"GO\" collect $200.", function() { advance(24);});
-chanceCards[12] = new Card("Your building loan matures. Collect $150.", function() { addamount(150, 'Chance');});
-chanceCards[13] = new Card("ADVANCE TO THE NEAREST RAILROAD. If UNOWNED, you may buy it from the Bank. If OWNED, pay owner twice the rental to which they are otherwise entitled.", function() { advanceToNearestRailroad();});
-chanceCards[14] = new Card("ADVANCE to St. Charles Place. If you pass \"GO\" collect $200.", function() { advance(11);});
-chanceCards[15] = new Card("Go to Jail. Go Directly to Jail. Do not pass \"GO\". Do not collect $200.", function() { gotojail();});
+chanceCards[0] = new Card(
+	"Metu saka penjara gratis. Kertu iki isa disimpen nganti dibutuhake utawa didol.",
+	function(p) { p.chanceJailCard = true; updateOwned(); }
+);
+
+chanceCards[1] = new Card(
+	"Ndandani kabeh propertimu. saben omah mbayar $25. saben hotel mbayar $100.",
+	function() { streetrepairs(25, 100); }
+);
+
+chanceCards[2] = new Card(
+	"Dendha kebut-kebutan $15.",
+	function() { subtractamount(15, 'Chance'); }
+);
+
+chanceCards[3] = new Card(
+	"Kowe kapilih dadi ketua dewan. Mbok bayar saben pemain $50.",
+	function() { payeachplayer(50, 'Chance'); }
+);
+
+chanceCards[4] = new Card(
+	"Mundur telu langkah.",
+	function() { gobackthreespaces(); }
+);
+
+chanceCards[5] = new Card(
+	"Maju menyang utilitas sing paling cedhak. Yen durung diduweni, isa tuku saka bank. Yen wis diduweni, guncang dadu lan bayar pemilik kaping sepuluh saka angka dadu.",
+	function() { advanceToNearestUtility(); }
+);
+
+chanceCards[6] = new Card(
+	"Bank mbayar dividen $50.",
+	function() { addamount(50, 'Chance'); }
+);
+
+chanceCards[7] = new Card(
+	"Maju menyang stasiun sepur sing paling cedhak. Yen durung diduweni, isa tuku saka bank. Yen wis diduweni, bayar sewa kaping pindho.",
+	function() { advanceToNearestRailroad(); }
+);
+
+chanceCards[8] = new Card(
+	"Bayar pajeg wong miskin $15.",
+	function() { subtractamount(15, 'Chance'); }
+);
+
+chanceCards[9] = new Card(
+	"Lelungan menyang Stasiun Pekalongan. Yen liwat \"go\", tampa $200.",
+	function() { advance(5); }
+);
+
+chanceCards[10] = new Card(
+	"Maju menyang London.",
+	function() { advance(39); }
+);
+
+chanceCards[11] = new Card(
+	"Maju menyang Wat Arun Bangkok. Yen liwat \"go\", tampa $200.",
+	function() { advance(24); }
+);
+
+chanceCards[12] = new Card(
+	"Utang bangunanmu wis tempo. Tampa $150.",
+	function() { addamount(150, 'Chance'); }
+);
+
+chanceCards[13] = new Card(
+	"Maju menyang stasiun  utowo pelabuhan utowo bandara sing paling cedhak. Yen durung diduweni, isa tuku saka bank. Yen wis diduweni, bayar sewa kaping pindho.",
+	function() { advanceToNearestRailroad(); }
+);
+
+chanceCards[14] = new Card(
+	"Maju menyang Lombok. Yen liwat \"go\", tampa $200.",
+	function() { advance(11); }
+);
+
+chanceCards[15] = new Card(
+	"Mlebu penjara. Langsung mlebu penjara. Aja liwat \"go\". Aja nampa $200.",
+	function() { gotojail(); }
+);
